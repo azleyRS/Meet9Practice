@@ -15,7 +15,14 @@ public class NotepadBaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-
+        sqLiteDatabase.execSQL("create table " + NotepadDbSchema.NotepadTable.NAME +
+            "(" + " _id integer primary key autoincrement, " +
+            NotepadDbSchema.NotepadTable.Cols.UUID + ", " +
+            NotepadDbSchema.NotepadTable.Cols.NOTE_NAME + ", " +
+            NotepadDbSchema.NotepadTable.Cols.TIME + ", " +
+            NotepadDbSchema.NotepadTable.Cols.CONTENT +
+            ")"
+        );
     }
 
     @Override
